@@ -83,5 +83,5 @@ dependencies {
     /**
      * Modules
      */
-    implementation project(rootProject.ext.presentation.homepage)
+    implementation project(rootProject.ext.domain.router)
 }

@@ -9,6 +9,11 @@ include ':app'
 include ':data:networking'
 
 /**
+ *
+ */
+include ':domain:router'
+
+/**
  * Presentation
  */
 include ':presentation:homepage'

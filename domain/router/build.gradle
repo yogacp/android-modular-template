@@ -1,0 +1,14 @@
+apply from: "$rootDir/dependencies/common.gradle"
+
+dependencies {
+    /**
+     * Core Dependencies
+     */
+    implementation rootProject.ext.androidx.appcompat
+
+
+    /**
+     * Modules
+     */
+    implementation project(rootProject.ext.presentation.homepage)
+}

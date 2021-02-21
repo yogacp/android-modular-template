@@ -1,9 +1,8 @@
 package com.yogacp.app.entrance.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.yogacp.homepage.view.HomepageActivity
+import com.yogacp.router.RouterNavigation
 
 /**
  * Created by Yoga C. Pranata on 2/21/21.
@@ -11,13 +10,10 @@ import com.yogacp.homepage.view.HomepageActivity
  */
 class EntranceActivity : AppCompatActivity() {
 
+    private val router = RouterNavigation()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        navigateToHomepage()
-    }
-
-    private fun navigateToHomepage() {
-        val homepage = Intent(this, HomepageActivity::class.java)
-        startActivity(homepage)
+        router.goToHomepage(this)
     }
 }

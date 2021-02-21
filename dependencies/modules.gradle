@@ -3,6 +3,10 @@ ext {
             "networking"    : ":data:networking"
     ]
 
+    domain = [
+            "router"        : ":domain:router"
+    ]
+
     external = [
             "abstraction"   : ":external:abstraction"
     ]
