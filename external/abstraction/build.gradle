@@ -1,0 +1,15 @@
+apply from: "$rootDir/dependencies/common.gradle"
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    implementation rootProject.ext.networking.retrofit
+    implementation rootProject.ext.google.material
+    implementation rootProject.ext.image.glide
+    implementation rootProject.ext.image.glide_webp_decoder
+    kapt rootProject.ext.image.glide_compiler
+}

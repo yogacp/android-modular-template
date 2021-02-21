@@ -1,0 +1,32 @@
+apply from: "$rootDir/dependencies/common.gradle"
+
+android {
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+dependencies {
+    /**
+     * Core Dependencies
+     */
+    implementation rootProject.ext.androidx.appcompat
+    implementation rootProject.ext.androidx.constraintlayout
+    implementation rootProject.ext.androidx.lifecycle_runtime
+    implementation rootProject.ext.androidx.swiperefreshlayout
+    implementation rootProject.ext.google.material
+    implementation rootProject.ext.google.gson
+
+
+    /**
+     * Modules
+     */
+    implementation project(rootProject.ext.data.networking)
+    implementation project(rootProject.ext.external.abstraction)
+
+
+    /**
+     * Others Dependencies
+     */
+    implementation rootProject.ext.others.android_viewbinding
+}

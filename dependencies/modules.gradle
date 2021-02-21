@@ -1,0 +1,13 @@
+ext {
+    data = [
+            "networking"    : ":data:networking"
+    ]
+
+    external = [
+            "abstraction"   : ":external:abstraction"
+    ]
+
+    presentation = [
+            "homepage"      : ":presentation:homepage"
+    ]
+}

@@ -1,0 +1,87 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'kotlin-android-extensions'
+}
+
+android {
+    compileSdkVersion       rootProject.ext.compileSdk
+    buildToolsVersion       rootProject.ext.buildTools
+
+    defaultConfig {
+        applicationId       rootProject.ext.applicationId
+        minSdkVersion       rootProject.ext.minSdk
+        targetSdkVersion    rootProject.ext.targetSdk
+        versionCode         rootProject.ext.versionCode
+        versionName         rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".debug"
+            testCoverageEnabled true
+            debuggable true
+            shrinkResources false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        release {
+            debuggable false
+            shrinkResources true
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        quiet true
+        abortOnError false
+        ignoreWarnings true
+        checkReleaseBuilds false
+        disable 'TypographyFractions','TypographyQuotes'
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    bundle {
+        language {
+            enableSplit = false
+        }
+        density {
+            enableSplit = true
+        }
+        abi {
+            enableSplit = true
+        }
+    }
+
+    buildFeatures {
+        viewBinding true
+    }
+}
+
+kapt {
+    useBuildCache = true
+}
+
+dependencies {
+    /**
+     * Core Dependencies
+     */
+    implementation rootProject.ext.jetbrains.kotlin
+    implementation rootProject.ext.androidx.appcompat
+
+    /**
+     * Modules
+     */
+    implementation project(rootProject.ext.presentation.homepage)
+}

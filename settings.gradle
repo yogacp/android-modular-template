@@ -1,0 +1,19 @@
+/**
+ * Application
+ */
+include ':app'
+
+/**
+ * Data
+ */
+include ':data:networking'
+
+/**
+ * Presentation
+ */
+include ':presentation:homepage'
+
+/**
+ * External
+ */
+include ':external:abstraction'

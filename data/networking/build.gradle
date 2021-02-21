@@ -1,0 +1,14 @@
+apply from: "$rootDir/dependencies/common.gradle"
+
+dependencies {
+    implementation rootProject.ext.networking.okhttp
+    implementation rootProject.ext.networking.retrofit
+    implementation rootProject.ext.networking.converter_gson
+    implementation rootProject.ext.networking.logging_interceptor
+    implementation rootProject.ext.networking.retrofit2_coroutines_adapter
+
+    /**
+     * Modules
+     */
+    implementation project(rootProject.ext.external.abstraction)
+}

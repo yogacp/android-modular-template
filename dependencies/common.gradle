@@ -1,0 +1,52 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion       rootProject.ext.compileSdk
+
+    defaultConfig {
+        minSdkVersion       rootProject.ext.minSdk
+        targetSdkVersion    rootProject.ext.targetSdk
+        versionCode         rootProject.ext.versionCode
+        versionName         rootProject.ext.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+    /**
+     * Core Dependencies
+     */
+    implementation rootProject.ext.jetbrains.kotlin
+    implementation rootProject.ext.androidx.core_ktx
+    implementation rootProject.ext.androidx.livedata
+    implementation rootProject.ext.androidx.viewmodel
+
+
+    /**
+     * Coroutines
+     */
+    implementation rootProject.ext.kotlinx.coroutines_core
+    implementation rootProject.ext.kotlinx.coroutines_android
+}
